@@ -7,7 +7,7 @@ using Microsoft.SqlServer.Server;
 
 public partial class UserDefinedFunctions
 {
-    /* Generic function to return location entity type from Bing Maps location recognition service */
+    /* Generic function to return location entity type from Bing Maps Local Search service */
     public static XmlDocument LocRec(
         string longitude,
         string latitude,
@@ -19,14 +19,14 @@ public partial class UserDefinedFunctions
 
         try
         {
-            // URL template for making an API request
-            string urltemplate = "http://dev.virtualearth.net/REST/v1/locationrecog/{1},{0}?radius=.01&top=1&distanceunit=mi&key={2}&output=xml";
+            // URL template for Local Search API - searches for businesses near coordinates
+            string urltemplate = "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=*&userLocation={1},{0}&maxResults=1&key={2}&output=xml";
 
             // Insert the supplied parameters into the URL template
             string url = string.Format(urltemplate,
-                longitude ?? "",
-                latitude ?? "",
-                bingKey?.Trim() ?? "");
+                longitude != null ? longitude : "",
+                latitude != null ? latitude : "",
+                bingKey != null ? bingKey.Trim() : "");
 
             // Make request to the Locations API REST service
             HttpWebRequest webrequest = (HttpWebRequest)WebRequest.Create(url);
@@ -46,7 +46,7 @@ public partial class UserDefinedFunctions
         catch (Exception ex)
         {
             // Create a valid XML document that will signal an error condition
-            xmlResponse.LoadXml($"<Response><StatusCode>500</StatusCode><ErrorDetails>{ex.Message}</ErrorDetails></Response>");
+            xmlResponse.LoadXml("<Response><StatusCode>500</StatusCode><ErrorDetails>" + ex.Message + "</ErrorDetails></Response>");
         }
 
         // Return an XMLDocument with the results or error
@@ -116,27 +116,25 @@ public partial class UserDefinedFunctions
                 return SqlString.Null;
             }
 
-            XmlNode isPrivateResidenceNode = resource.SelectSingleNode("IsPrivateResidence");
-            if (isPrivateResidenceNode != null)
+            // Check for business entity type from Local Search API
+            XmlNode entityTypeNode = resource.SelectSingleNode("EntityType");
+            if (entityTypeNode != null)
             {
-                if (isPrivateResidenceNode.InnerText == "true")
+                string entityType = entityTypeNode.InnerText;
+                if (!string.IsNullOrEmpty(entityType))
                 {
-                    locationType = new SqlString("Residential");
+                    // Safe substring operation to ensure SQL string length limits
+                    int maxLength = Math.Min(entityType.Length, 255);
+                    locationType = new SqlString(entityType.Substring(0, maxLength));
                 }
-                else
+            }
+            else
+            {
+                // Fallback: check for business name if no entity type
+                XmlNode nameNode = resource.SelectSingleNode("Name");
+                if (nameNode != null && !string.IsNullOrEmpty(nameNode.InnerText))
                 {
-                    // Navigate to business types
-                    XmlNode businessesNode = resource.SelectSingleNode("BusinessesAtLocation/BusinessLocationEntity/BusinessInfo/Types");
-                    if (businessesNode != null)
-                    {
-                        string busType = businessesNode.InnerText;
-                        // Safe substring operation
-                        if (!string.IsNullOrEmpty(busType))
-                        {
-                            int maxLength = Math.Min(busType.Length, 255);
-                            locationType = new SqlString(busType.Substring(0, maxLength));
-                        }
-                    }
+                    locationType = new SqlString("Business");
                 }
             }
 

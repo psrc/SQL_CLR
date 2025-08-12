@@ -23,10 +23,11 @@ public partial class UserDefinedFunctions
         try
         {
             // URL template for making an api request
-            string urltemplate = "http://dev.virtualearth.net/REST/V1/Routes/{4}?wp.0={1},{0}&wp.1={3},{2}&distanceUnit=mi&optmz=distance&output=xml&key={5}";
+            string urltemplate = "https://dev.virtualearth.net/REST/V1/Routes/{4}?wp.0={1},{0}&wp.1={3},{2}&distanceUnit=mi&optmz=distance&output=xml&key={5}";
 
             // Insert the supplied parameters into the URL template
-            string url = string.Format(urltemplate, origin_longitude, origin_latitude, dest_longitude, dest_latitude, mode?.Trim() ?? "", bingKey?.Trim() ?? "");
+            string url = string.Format(urltemplate, origin_longitude, origin_latitude, dest_longitude, dest_latitude, 
+                mode != null ? mode.Trim() : "", bingKey != null ? bingKey.Trim() : "");
 
             // Make request to the Locations API REST service
             HttpWebRequest webrequest = (HttpWebRequest)WebRequest.Create(url);
@@ -46,7 +47,7 @@ public partial class UserDefinedFunctions
         catch (Exception ex)
         {
             // Create a valid XML document that will signal an error condition
-            xmlResponse.LoadXml($"<Response><StatusCode>500</StatusCode><ErrorDetails>{ex.Message}</ErrorDetails></Response>");
+            xmlResponse.LoadXml("<Response><StatusCode>500</StatusCode><ErrorDetails>" + ex.Message + "</ErrorDetails></Response>");
         }
 
         // Return an XMLDocument with the results or error
@@ -129,11 +130,13 @@ public partial class UserDefinedFunctions
                 string travelSeconds = travelDurationNode.InnerText;
 
                 // Validate that the values can be parsed as numbers
-                if (double.TryParse(travelSeconds, out double seconds) && double.TryParse(travelMiles, out _))
+                double seconds;
+                double miles;
+                if (double.TryParse(travelSeconds, out seconds) && double.TryParse(travelMiles, out miles))
                 {
                     double convertMinutes = seconds / 60.00;
                     string travelMinutes = convertMinutes.ToString();
-                    distSpeed = new SqlString($"{travelMiles},{travelMinutes}");
+                    distSpeed = new SqlString(travelMiles + "," + travelMinutes);
                 }
             }
 
