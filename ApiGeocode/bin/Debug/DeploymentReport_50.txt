@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[geocode_b] (Function)
+       [dbo].[geocode_g] (Function)
+       [ApiGeocode] (Assembly)
+     Create
+       [ApiGeocode] (Assembly)
+       [dbo].[geocode_b] (Function)
+       [dbo].[geocode_g] (Function)
+
+** Supporting actions
+
+If this deployment is executed, changes to [dbo].[geocode_b] might introduce run-time errors in [employment].[geocode_qcew].
+If this deployment is executed, changes to [dbo].[geocode_g] might introduce run-time errors in [employment].[geocode_qcew].
+

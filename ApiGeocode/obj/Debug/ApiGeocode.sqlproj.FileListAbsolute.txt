@@ -1,0 +1,54 @@
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\ApiGeocode.dacpac
+C:\Users\mjensen\Documents\projects\ApiGeocode\obj\Debug\ApiGeocode.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\obj\Debug\ApiGeocode.pdb
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\ApiGeocode.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\ApiGeocode.pdb
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\osr_csharp.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ApiGeocode\obj\Debug\ApiGeocode.sqlproj.CopyComplete
+C:\Users\mjensen\Documents\projects\ApiGeocode\obj\Debug\ApiGeocode.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\Documents\projects\ApiGeocode\obj\Debug\Model.xml
+C:\Users\mjensen\Documents\projects\ApiGeocode\obj\Debug\refactor.xml
+C:\Users\mjensen\Documents\projects\ApiGeocode\obj\Debug\postdeploy.sql
+C:\Users\mjensen\Documents\projects\ApiGeocode\obj\Debug\predeploy.sql
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\ApiGeocode.dacpac
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\ApiGeocode.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\ApiGeocode.pdb
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\obj\Debug\ApiGeocode.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\obj\Debug\Model.xml
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\obj\Debug\refactor.xml
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\obj\Debug\postdeploy.sql
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\obj\Debug\predeploy.sql
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\obj\Debug\ApiGeocode.sqlproj.CopyComplete
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\obj\Debug\ApiGeocode.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\obj\Debug\ApiGeocode.pdb
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ApiGeocode\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\projects\ApiGeocode\bin\Debug\ApiGeocode.dacpac
+C:\Users\mjensen\projects\ApiGeocode\bin\Debug\ApiGeocode.dll
+C:\Users\mjensen\projects\ApiGeocode\bin\Debug\ApiGeocode.pdb
+C:\Users\mjensen\projects\ApiGeocode\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\mjensen\projects\ApiGeocode\bin\Debug\ProjNet.dll
+C:\Users\mjensen\projects\ApiGeocode\bin\Debug\ProjNet.pdb
+C:\Users\mjensen\projects\ApiGeocode\obj\Debug\ApiGeocode.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\projects\ApiGeocode\obj\Debug\ApiGeoco.9C4E8125.Up2Date
+C:\Users\mjensen\projects\ApiGeocode\obj\Debug\ApiGeocode.dll
+C:\Users\mjensen\projects\ApiGeocode\obj\Debug\ApiGeocode.pdb

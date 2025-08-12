@@ -1,0 +1,10 @@
+C:\Users\mjensen\projects\DLDistance\bin\Debug\StringDistance.dacpac
+C:\Users\mjensen\projects\DLDistance\bin\Debug\StringDistance.dll
+C:\Users\mjensen\projects\DLDistance\bin\Debug\StringDistance.pdb
+C:\Users\mjensen\projects\DLDistance\obj\Debug\StringDistance.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\projects\DLDistance\obj\Debug\Model.xml
+C:\Users\mjensen\projects\DLDistance\obj\Debug\refactor.xml
+C:\Users\mjensen\projects\DLDistance\obj\Debug\postdeploy.sql
+C:\Users\mjensen\projects\DLDistance\obj\Debug\predeploy.sql
+C:\Users\mjensen\projects\DLDistance\obj\Debug\StringDistance.dll
+C:\Users\mjensen\projects\DLDistance\obj\Debug\StringDistance.pdb

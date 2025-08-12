@@ -1,0 +1,81 @@
+11/17/2020 7:42:11 PM	This log contains information about the import schema operation into project 'ApiGeocode' on computer 'PSRC4120' by user 'MJensen'.
+11/17/2020 7:42:12 PM	Import of database schema has started.
+11/17/2020 7:42:21 PM	Gathering database credentials
+11/17/2020 7:42:21 PM	Gathering database options
+11/17/2020 7:42:21 PM	Gathering users
+11/17/2020 7:42:21 PM	Gathering roles
+11/17/2020 7:42:21 PM	Gathering application roles
+11/17/2020 7:42:21 PM	Gathering role memberships
+11/17/2020 7:42:21 PM	Gathering filegroups
+11/17/2020 7:42:21 PM	Gathering full-text catalogs
+11/17/2020 7:42:21 PM	Gathering assemblies
+11/17/2020 7:42:22 PM	Gathering certificates
+11/17/2020 7:42:22 PM	Gathering asymmetric keys
+11/17/2020 7:42:22 PM	Gathering symmetric keys
+11/17/2020 7:42:22 PM	Gathering encrypted symmetric keys
+11/17/2020 7:42:22 PM	Gathering schemas
+11/17/2020 7:42:22 PM	Gathering XML schema collections
+11/17/2020 7:42:22 PM	Gathering user-defined data types
+11/17/2020 7:42:22 PM	Gathering user-defined types
+11/17/2020 7:42:22 PM	Gathering table types
+11/17/2020 7:42:22 PM	Gathering unique keys for table types
+11/17/2020 7:42:22 PM	Gathering primary keys for table types
+11/17/2020 7:42:22 PM	Gathering indexes for table types
+11/17/2020 7:42:22 PM	Gathering check constraints for table types
+11/17/2020 7:42:22 PM	Gathering default constraints for table types
+11/17/2020 7:42:22 PM	Gathering partition functions
+11/17/2020 7:42:22 PM	Gathering partition schemes
+11/17/2020 7:42:22 PM	Gathering functions
+11/17/2020 7:42:22 PM	Gathering encrypted functions
+11/17/2020 7:42:22 PM	Gathering aggregates
+11/17/2020 7:42:22 PM	Gathering procedures
+11/17/2020 7:42:22 PM	Gathering encrypted procedures
+11/17/2020 7:42:22 PM	Gathering tables
+11/17/2020 7:42:23 PM	Gathering primary keys
+11/17/2020 7:42:23 PM	Gathering unique constraints
+11/17/2020 7:42:23 PM	Gathering foreign keys
+11/17/2020 7:42:23 PM	Gathering default constraints
+11/17/2020 7:42:23 PM	Gathering check constraints
+11/17/2020 7:42:23 PM	Gathering views
+11/17/2020 7:42:23 PM	Gathering encrypted views
+11/17/2020 7:42:23 PM	Gathering indexes
+11/17/2020 7:42:23 PM	Gathering statistics
+11/17/2020 7:42:23 PM	Gathering full-text index stoplists
+11/17/2020 7:42:23 PM	Gathering search property lists
+11/17/2020 7:42:23 PM	Gathering search properties
+11/17/2020 7:42:23 PM	Gathering full-text indexes
+11/17/2020 7:42:23 PM	Gathering column store indexes
+11/17/2020 7:42:23 PM	Gathering spatial indexes
+11/17/2020 7:42:24 PM	Gathering XML indexes
+11/17/2020 7:42:24 PM	Gathering Selective XML indexes
+11/17/2020 7:42:24 PM	Gathering encrypted triggers
+11/17/2020 7:42:24 PM	Gathering triggers
+11/17/2020 7:42:24 PM	Gathering encrypted and clr ddl triggers
+11/17/2020 7:42:24 PM	Gathering ddl triggers
+11/17/2020 7:42:24 PM	Gathering synonyms
+11/17/2020 7:42:24 PM	Gathering defaults
+11/17/2020 7:42:24 PM	Gathering data constraint uddt bindings
+11/17/2020 7:42:24 PM	Gathering rules
+11/17/2020 7:42:24 PM	Gathering data constraint uddt bindings
+11/17/2020 7:42:24 PM	Gathering message types
+11/17/2020 7:42:24 PM	Gathering queues
+11/17/2020 7:42:24 PM	Gathering contracts
+11/17/2020 7:42:24 PM	Gathering services
+11/17/2020 7:42:24 PM	Gathering event notifications
+11/17/2020 7:42:24 PM	Gathering remote service bindings
+11/17/2020 7:42:24 PM	Gathering broker priorities
+11/17/2020 7:42:24 PM	Gathering signatures
+11/17/2020 7:42:24 PM	Gathering data compression options
+11/17/2020 7:42:24 PM	Gathering sequence types
+11/17/2020 7:42:24 PM	Gathering security policies
+11/17/2020 7:42:24 PM	Gather column encryption keys
+11/17/2020 7:42:24 PM	Gathering column master keys
+11/17/2020 7:42:24 PM	Gathering external data sources
+11/17/2020 7:42:24 PM	Gathering external file formats
+11/17/2020 7:42:24 PM	Gathering external tables
+11/17/2020 7:42:24 PM	Gathering extended properties
+11/17/2020 7:42:26 PM	Scanning project for duplicate elements
+11/17/2020 7:42:27 PM	Finished duplicate element processing
+11/17/2020 7:42:47 PM	Finished importing database.
+11/17/2020 7:42:47 PM	A summary of the import was saved to the following location: C:\Users\mjensen\Documents\projects\ApiGeocode\Import Schema Logs\ApiGeocode_20201118034211.log
+11/17/2020 7:42:47 PM	Click Finish to continue...

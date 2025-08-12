@@ -1,0 +1,7 @@
+C:\Users\mjensen\projects\ProjNet\bin\Debug\net48\ProjNet.dll
+C:\Users\mjensen\projects\ProjNet\bin\Debug\net48\ProjNet.pdb
+C:\Users\mjensen\projects\ProjNet\obj\Debug\net48\ProjNet.csproj.AssemblyReference.cache
+C:\Users\mjensen\projects\ProjNet\obj\Debug\net48\ProjNet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mjensen\projects\ProjNet\obj\Debug\net48\ProjNet.csproj.CoreCompileInputs.cache
+C:\Users\mjensen\projects\ProjNet\obj\Debug\net48\ProjNet.dll
+C:\Users\mjensen\projects\ProjNet\obj\Debug\net48\ProjNet.pdb

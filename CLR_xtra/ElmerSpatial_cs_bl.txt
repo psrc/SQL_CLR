@@ -1,0 +1,86 @@
+using System;
+using System.Data.SqlTypes;
+using Microsoft.SqlServer.Types;
+using OSGeo.OSR;
+
+/*  -------------------------------------------------------------------------------------------------------
+    C# script to build spatial transformation functions for Elmer, PSRC's SQL Server central Data Warehouse.
+
+    These utilize the GDAL library via csharp bindings via separate assemblies in Elmer
+    (they come with GDAL as gdal_csharp.dll, osr_csharp.dll and osg_csharp.dll)
+        
+    GDAL can transform between any two geodetic systems.
+    These are limited to WGS84 (EPSG 4326) and NAD83 SP WA N (EPSG 2285) 
+      both for compatibility with Elmer/ElmerGeo, and for simplicity + security (fewer flexible parameters)
+
+    Built and published to Elmer using Virtual Studio.
+    The result (with compiled assembly language included) is stored separately as ElmerSpatial.publish.sql
+    ------------------------------------------------------------------------------------------------------- */
+
+
+public partial class UserDefinedFunctions
+{
+    [Microsoft.SqlServer.Server.SqlFunction]
+    public static SqlGeometry ToXY(decimal lng, decimal lat)   // Spatial transformation from WGS to NAD83 SP WA N
+    {
+        //  Transforms from EPSG 4236 i.e. WGS84
+        string epsg_wgs1984_proj4 = @"+proj=latlong +datum=WGS84 +no_defs";
+        OSGeo.OSR.SpatialReference src = new("");
+        src.ImportFromProj4(epsg_wgs1984_proj4);
+
+        // . . . to EPSG 2285 i.e. NAD83 SP WA N
+        string epsg_2285_proj4 = @"+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs";
+        OSGeo.OSR.SpatialReference dst = new("");
+        dst.ImportFromProj4(epsg_2285_proj4);
+
+        // Init the transformer object.
+        OSGeo.OSR.CoordinateTransformation ct = new OSGeo.OSR.CoordinateTransformation(src, dst);
+
+        double[] p = new double[2];
+        p[0] = Convert.ToDouble(lng);
+        p[1] = Convert.ToDouble(lat);
+
+        if (p[0] < -124.95 || p[0] > -116.83 || p[1] < 45.65 || p[1] > 49.06) // units must be decimal degrees, here limited to Washington State
+        {
+            return SqlGeometry.Null;
+        }
+        else
+        {
+            ct.TransformPoint(p); // Carry out the coordinate transformation
+
+            return SqlGeometry.Point(p[0], p[1], 2285);
+        }
+    }
+
+    public static SqlGeometry ToLngLat(decimal x, decimal y)
+    {
+        // Transforms fromEPSG 2285 i.e. NAD83 SP WA N
+        string epsg_2285_proj4 = @"+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs";
+        OSGeo.OSR.SpatialReference src = new("");
+        src.ImportFromProj4(epsg_2285_proj4);
+
+        // . . . to EPSG 4236 i.e. WGS84
+        string epsg_wgs1984_proj4 = @"+proj=latlong +datum=WGS84 +no_defs";
+        OSGeo.OSR.SpatialReference dst = new("");
+        dst.ImportFromProj4(epsg_wgs1984_proj4);
+
+        // Init the transformer object.
+        OSGeo.OSR.CoordinateTransformation ct = new OSGeo.OSR.CoordinateTransformation(src, dst);
+
+        double[] p = new double[2];
+        p[0] = Convert.ToDouble(x);
+        p[1] = Convert.ToDouble(y);
+
+        if (p[0] < -600000.00 || p[0] > 2700000.00 || p[1] < -550000.00 || p[1] > 800000.00) // units must be feet, here limited to Washington State
+        {
+            return SqlGeometry.Null;
+        }
+        else
+        {
+            ct.TransformPoint(p); // Carry out the coordinate transformation
+
+            return SqlGeometry.Point(p[0], p[1], 4326);
+        }
+    }
+
+}

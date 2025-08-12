@@ -1,0 +1,15 @@
+C:\Users\mjensen\projects\ConsoleTestApp\obj\Debug\ConsoleTestApp.csproj.AssemblyReference.cache
+C:\Users\mjensen\projects\ConsoleTestApp\obj\Debug\ConsoleTestApp.csproj.CoreCompileInputs.cache
+C:\Users\mjensen\projects\ConsoleTestApp\bin\Debug\ConsoleTestApp.exe.config
+C:\Users\mjensen\projects\ConsoleTestApp\bin\Debug\ConsoleTestApp.exe
+C:\Users\mjensen\projects\ConsoleTestApp\bin\Debug\ConsoleTestApp.pdb
+C:\Users\mjensen\projects\ConsoleTestApp\bin\Debug\ApiGeocode.dll
+C:\Users\mjensen\projects\ConsoleTestApp\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\mjensen\projects\ConsoleTestApp\bin\Debug\ProjNet.dll
+C:\Users\mjensen\projects\ConsoleTestApp\bin\Debug\XY_LatLng.dll
+C:\Users\mjensen\projects\ConsoleTestApp\bin\Debug\ApiGeocode.pdb
+C:\Users\mjensen\projects\ConsoleTestApp\bin\Debug\ProjNet.pdb
+C:\Users\mjensen\projects\ConsoleTestApp\bin\Debug\XY_LatLng.pdb
+C:\Users\mjensen\projects\ConsoleTestApp\obj\Debug\ConsoleT.58FBDB89.Up2Date
+C:\Users\mjensen\projects\ConsoleTestApp\obj\Debug\ConsoleTestApp.exe
+C:\Users\mjensen\projects\ConsoleTestApp\obj\Debug\ConsoleTestApp.pdb

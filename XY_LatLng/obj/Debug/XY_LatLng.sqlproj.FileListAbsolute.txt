@@ -1,0 +1,10 @@
+C:\Users\mjensen\projects\XY_LatLng\bin\Debug\XY_LatLng.dacpac
+C:\Users\mjensen\projects\XY_LatLng\bin\Debug\XY_LatLng.dll
+C:\Users\mjensen\projects\XY_LatLng\bin\Debug\XY_LatLng.pdb
+C:\Users\mjensen\projects\XY_LatLng\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\mjensen\projects\XY_LatLng\bin\Debug\ProjNet.dll
+C:\Users\mjensen\projects\XY_LatLng\obj\Debug\XY_LatLng.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\projects\XY_LatLng\obj\Debug\XY_LatLng.sqlproj.Up2Date
+C:\Users\mjensen\projects\XY_LatLng\obj\Debug\XY_LatLng.dll
+C:\Users\mjensen\projects\XY_LatLng\obj\Debug\XY_LatLng.pdb
+C:\Users\mjensen\projects\XY_LatLng\bin\Debug\ProjNet.pdb

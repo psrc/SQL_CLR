@@ -1,0 +1,45 @@
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\DistMatrix.dacpac
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\DistMatrix.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\DistMatrix.pdb
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.sqlprojAssemblyReference.cache
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.sqlproj.CopyComplete
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.dll
+C:\Users\mjensen\Documents\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.pdb
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.pdb
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\DistMatrix.dacpac
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\DistMatrix.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\DistMatrix.pdb
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\obj\Debug\Model.xml
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\obj\Debug\refactor.xml
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\obj\Debug\postdeploy.sql
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\obj\Debug\predeploy.sql
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.sqlproj.CopyComplete
+C:\Users\mjensen\projects\DistMatrix\DistMatrix\bin\Debug\DistMatrix.dacpac
+C:\Users\mjensen\projects\DistMatrix\DistMatrix\bin\Debug\DistMatrix.dll
+C:\Users\mjensen\projects\DistMatrix\DistMatrix\bin\Debug\DistMatrix.pdb
+C:\Users\mjensen\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.dll
+C:\Users\mjensen\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.pdb

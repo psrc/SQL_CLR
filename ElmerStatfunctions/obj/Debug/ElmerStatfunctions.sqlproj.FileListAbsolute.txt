@@ -1,0 +1,45 @@
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\ElmerStatfunctions.dacpac
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\obj\Debug\ElmerStatfunctions.sqlprojAssemblyReference.cache
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\obj\Debug\ElmerStatfunctions.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\obj\Debug\ElmerStatfunctions.pdb
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\ElmerStatfunctions.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\ElmerStatfunctions.pdb
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\ElmerSpatial.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\gdal_csharp.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\ogr_csharp.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\osr_csharp.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\SqlRegEx.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\tSQLtCLR.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\obj\Debug\ElmerStatfunctions.sqlproj.CopyComplete
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\obj\Debug\Model.xml
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\obj\Debug\refactor.xml
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\obj\Debug\postdeploy.sql
+C:\Users\mjensen\Documents\projects\ElmerStatfunctions\obj\Debug\predeploy.sql
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\bin\Debug\ElmerStatfunctions.dacpac
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\bin\Debug\ElmerStatfunctions.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\bin\Debug\ElmerStatfunctions.pdb
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\bin\Debug\ElmerSpatial.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\bin\Debug\gdal_csharp.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\bin\Debug\ogr_csharp.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\bin\Debug\osr_csharp.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\bin\Debug\SqlRegEx.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\bin\Debug\tSQLtCLR.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\obj\Debug\ElmerStatfunctions.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\obj\Debug\Model.xml
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\obj\Debug\refactor.xml
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\obj\Debug\postdeploy.sql
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\obj\Debug\predeploy.sql
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\obj\Debug\ElmerStatfunctions.sqlproj.CopyComplete
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\obj\Debug\ElmerStatfunctions.dll
+C:\Users\mjensen\OneDrive - Puget Sound Regional Council\Documents\projects\ElmerStatfunctions\obj\Debug\ElmerStatfunctions.pdb

@@ -1,0 +1,10 @@
+C:\Users\mjensen\projects\SqlRegEx\bin\Debug\SqlRegEx.dacpac
+C:\Users\mjensen\projects\SqlRegEx\bin\Debug\SqlRegEx.dll
+C:\Users\mjensen\projects\SqlRegEx\bin\Debug\SqlRegEx.pdb
+C:\Users\mjensen\projects\SqlRegEx\obj\Debug\SqlRegEx.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\projects\SqlRegEx\obj\Debug\Model.xml
+C:\Users\mjensen\projects\SqlRegEx\obj\Debug\refactor.xml
+C:\Users\mjensen\projects\SqlRegEx\obj\Debug\postdeploy.sql
+C:\Users\mjensen\projects\SqlRegEx\obj\Debug\predeploy.sql
+C:\Users\mjensen\projects\SqlRegEx\obj\Debug\SqlRegEx.dll
+C:\Users\mjensen\projects\SqlRegEx\obj\Debug\SqlRegEx.pdb

@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../ApiGeocode"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../DistMatrix"
+		},
+		{
+			"path": "../ElmerSpatial"
+		},
+		{
+			"path": "../ElmerStatfunctions"
+		},
+		{
+			"path": "../LocRecognize"
+		},
+		{
+			"path": "../SqlRegEx"
+		},
+		{
+			"path": "../StringDistance"
+		}
+	]
+}
