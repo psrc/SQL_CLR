@@ -43,3 +43,13 @@ C:\Users\mjensen\projects\DistMatrix\DistMatrix\bin\Debug\DistMatrix.pdb
 C:\Users\mjensen\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.sqlproj.AssemblyReference.cache
 C:\Users\mjensen\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.dll
 C:\Users\mjensen\projects\DistMatrix\DistMatrix\obj\Debug\DistMatrix.pdb
+C:\Users\mjensen\projects\SQL_CLR\DistMatrix\DistMatrix\bin\Debug\DistMatrix.dacpac
+C:\Users\mjensen\projects\SQL_CLR\DistMatrix\DistMatrix\bin\Debug\DistMatrix.dll
+C:\Users\mjensen\projects\SQL_CLR\DistMatrix\DistMatrix\bin\Debug\DistMatrix.pdb
+C:\Users\mjensen\projects\SQL_CLR\DistMatrix\DistMatrix\obj\Debug\DistMatrix.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\projects\SQL_CLR\DistMatrix\DistMatrix\obj\Debug\DistMatrix.dll
+C:\Users\mjensen\projects\SQL_CLR\DistMatrix\DistMatrix\obj\Debug\DistMatrix.pdb
+C:\Users\mjensen\projects\SQL_CLR\DistMatrix\DistMatrix\obj\Debug\Model.xml
+C:\Users\mjensen\projects\SQL_CLR\DistMatrix\DistMatrix\obj\Debug\refactor.xml
+C:\Users\mjensen\projects\SQL_CLR\DistMatrix\DistMatrix\obj\Debug\postdeploy.sql
+C:\Users\mjensen\projects\SQL_CLR\DistMatrix\DistMatrix\obj\Debug\predeploy.sql

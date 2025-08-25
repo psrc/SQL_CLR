@@ -26,3 +26,14 @@ C:\Users\mjensen\projects\LocRecognize\obj\Debug\LocRecognize.sqlproj.AssemblyRe
 C:\Users\mjensen\projects\LocRecognize\obj\Debug\LocRecognize.dll
 C:\Users\mjensen\projects\LocRecognize\obj\Debug\LocRecognize.pdb
 C:\Users\mjensen\projects\LocRecognize\obj\Debug\LocRecog.06AD82A7.Up2Date
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\bin\Debug\LocRecognize.dacpac
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\bin\Debug\LocRecognize.dll
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\bin\Debug\LocRecognize.pdb
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\obj\Debug\LocRecognize.sqlproj.AssemblyReference.cache
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\obj\Debug\LocRecog.06AD82A7.Up2Date
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\obj\Debug\LocRecognize.dll
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\obj\Debug\LocRecognize.pdb
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\obj\Debug\Model.xml
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\obj\Debug\refactor.xml
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\obj\Debug\postdeploy.sql
+C:\Users\mjensen\projects\SQL_CLR\LocRecognize\obj\Debug\predeploy.sql

@@ -5,13 +5,13 @@ using System.Net;
 using System.Xml;
 using Microsoft.SqlServer.Server;
 
-public partial class UserDefinedFunctions
+public partial class LocRecognizeFunctions
 {
-    /* Generic function to return location entity type from Bing Maps Local Search service */
+    /* Generic function to return location entity type from Google Places API Nearby Search service */
     public static XmlDocument LocRec(
         string longitude,
         string latitude,
-        string bingKey
+        string googleKey
     )
     {
         // Variable to hold the API response
@@ -19,16 +19,17 @@ public partial class UserDefinedFunctions
 
         try
         {
-            // URL template for Local Search API - searches for businesses near coordinates
-            string urltemplate = "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=*&userLocation={1},{0}&maxResults=1&key={2}&output=xml";
+            // URL template for Google Places API Nearby Search - searches for businesses near coordinates
+            // Note: Google Places API returns JSON by default, but we'll convert it to XML for consistency
+            string urltemplate = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={1},{0}&radius=50&type=establishment&key={2}";
 
             // Insert the supplied parameters into the URL template
             string url = string.Format(urltemplate,
                 longitude != null ? longitude : "",
                 latitude != null ? latitude : "",
-                bingKey != null ? bingKey.Trim() : "");
+                googleKey != null ? googleKey.Trim() : "");
 
-            // Make request to the Locations API REST service
+            // Make request to the Google Places API REST service
             HttpWebRequest webrequest = (HttpWebRequest)WebRequest.Create(url);
             webrequest.Method = "GET";
             webrequest.ContentLength = 0;
@@ -40,7 +41,9 @@ public partial class UserDefinedFunctions
             using (StreamReader streamReader = new StreamReader(stream))
             {
                 string responseText = streamReader.ReadToEnd();
-                xmlResponse.LoadXml(responseText);
+                
+                // Convert JSON response to XML format for compatibility with existing parsing logic
+                xmlResponse = ConvertGooglePlacesJsonToXml(responseText);
             }
         }
         catch (Exception ex)
@@ -53,12 +56,189 @@ public partial class UserDefinedFunctions
         return xmlResponse;
     }
 
+    /* Helper function to convert Google Places JSON response to XML format compatible with existing parsing logic */
+    private static XmlDocument ConvertGooglePlacesJsonToXml(string jsonResponse)
+    {
+        var xmlDoc = new XmlDocument();
+        
+        try
+        {
+            // Simple JSON parsing without external dependencies
+            // Looking for basic structure: {"status":"OK","results":[{"name":"...","types":["..."]}]}
+            
+            if (jsonResponse.Contains("OK") && jsonResponse.Contains("results"))
+            {
+                // Success case - create compatible XML structure
+                xmlDoc.LoadXml("<Response><StatusCode>200</StatusCode><ResourceSets><ResourceSet><Resources><Resource></Resource></Resources></ResourceSet></ResourceSets></Response>");
+                
+                // Find the best business result (skip routes and generic locations)
+                int resultsKeyPos = jsonResponse.IndexOf("results");
+                int resultsStart = jsonResponse.IndexOf("[", resultsKeyPos) + 1;
+                string bestResult = FindBestBusinessResult(jsonResponse, resultsStart);
+                
+                
+                if (!string.IsNullOrEmpty(bestResult))
+                {
+                    // Extract name
+                    string name = ExtractJsonValue(bestResult, "name");
+                    
+                    if (!string.IsNullOrEmpty(name))
+                    {
+                        var nameNode = xmlDoc.CreateElement("Name");
+                        nameNode.InnerText = name;
+                        xmlDoc.SelectSingleNode("//Resource").AppendChild(nameNode);
+                    }
+                    
+                    // Extract primary Google type (first in the types array)
+                    string types = ExtractJsonValue(bestResult, "types");
+                    
+                    if (!string.IsNullOrEmpty(types))
+                    {
+                        string primaryType = ExtractFirstGoogleType(types);
+                        
+                        if (!string.IsNullOrEmpty(primaryType))
+                        {
+                            var entityTypeNode = xmlDoc.CreateElement("EntityType");
+                            entityTypeNode.InnerText = primaryType;
+                            xmlDoc.SelectSingleNode("//Resource").AppendChild(entityTypeNode);
+                        }
+                    }
+                }
+            }
+            else if (jsonResponse.Contains("ZERO_RESULTS"))
+            {
+                // No results found
+                xmlDoc.LoadXml("<Response><StatusCode>200</StatusCode><ResourceSets><ResourceSet><Resources></Resources></ResourceSet></ResourceSets></Response>");
+            }
+            else
+            {
+                // Error case
+                string errorMessage = ExtractJsonValue(jsonResponse, "error_message");
+                if (string.IsNullOrEmpty(errorMessage))
+                {
+                    errorMessage = "Unknown Google Places API error";
+                }
+                xmlDoc.LoadXml($"<Response><StatusCode>400</StatusCode><ErrorDetails>{errorMessage}</ErrorDetails></Response>");
+            }
+        }
+        catch (Exception)
+        {
+            // Fallback error response
+            xmlDoc.LoadXml("<Response><StatusCode>500</StatusCode><ErrorDetails>Failed to parse Google Places API response</ErrorDetails></Response>");
+        }
+        
+        return xmlDoc;
+    }
+
+    /* Find the best business result, skipping routes and generic locations */
+    private static string FindBestBusinessResult(string jsonResponse, int resultsStartIndex)
+    {
+        int currentIndex = resultsStartIndex;
+        
+        while (currentIndex < jsonResponse.Length)
+        {
+            int resultStart = jsonResponse.IndexOf("{", currentIndex);
+            if (resultStart < 0) break;
+            
+            // Find the matching closing brace for this result object
+            int braceCount = 1;
+            int resultEnd = resultStart + 1;
+            while (resultEnd < jsonResponse.Length && braceCount > 0)
+            {
+                if (jsonResponse[resultEnd] == '"')
+                {
+                    // Skip over quoted strings to avoid counting braces inside strings
+                    resultEnd++;
+                    while (resultEnd < jsonResponse.Length && jsonResponse[resultEnd] != '"')
+                    {
+                        if (jsonResponse[resultEnd] == '\\') resultEnd++; // Skip escaped characters
+                        resultEnd++;
+                    }
+                }
+                else if (jsonResponse[resultEnd] == '{') braceCount++;
+                else if (jsonResponse[resultEnd] == '}') braceCount--;
+                resultEnd++;
+            }
+            
+            if (braceCount == 0)
+            {
+                string result = jsonResponse.Substring(resultStart, resultEnd - resultStart);
+                
+                // Check if this result has business_status and types that indicate a real business
+                if (result.Contains("\"business_status\"") && 
+                    (result.Contains("\"establishment\"") || result.Contains("\"point_of_interest\"")) &&
+                    !result.Contains("\"route\"") &&
+                    !result.Contains("\"locality\""))
+                {
+                    return result;
+                }
+                
+                currentIndex = resultEnd;
+            }
+            else
+            {
+                break; // Malformed JSON
+            }
+        }
+        
+        return "";
+    }
+    
+    /* Simple JSON value extractor without external dependencies */
+    private static string ExtractJsonValue(string json, string key)
+    {
+        string searchPattern = "\"" + key + "\"";
+        int keyIndex = json.IndexOf(searchPattern);
+        if (keyIndex < 0) return "";
+        
+        // Find the colon after the key (might have spaces)
+        int colonIndex = json.IndexOf(":", keyIndex);
+        if (colonIndex < 0) return "";
+        
+        int valueStart = colonIndex + 1;
+        
+        // Skip whitespace
+        while (valueStart < json.Length && char.IsWhiteSpace(json[valueStart]))
+            valueStart++;
+            
+        if (valueStart >= json.Length) return "";
+        
+        // Handle string values
+        if (json[valueStart] == '"')
+        {
+            valueStart++; // Skip opening quote
+            int valueEnd = json.IndexOf('"', valueStart);
+            if (valueEnd > valueStart)
+            {
+                return json.Substring(valueStart, valueEnd - valueStart);
+            }
+        }
+        // Handle array values
+        else if (json[valueStart] == '[')
+        {
+            int bracketCount = 1;
+            int arrayEnd = valueStart + 1;
+            while (arrayEnd < json.Length && bracketCount > 0)
+            {
+                if (json[arrayEnd] == '[') bracketCount++;
+                else if (json[arrayEnd] == ']') bracketCount--;
+                arrayEnd++;
+            }
+            if (bracketCount == 0)
+            {
+                return json.Substring(valueStart, arrayEnd - valueStart);
+            }
+        }
+        
+        return "";
+    }
+
     /* Wrapper method to expose api functionality as SQL Server User-Defined Function (UDF) */
     [Microsoft.SqlServer.Server.SqlFunction(DataAccess = DataAccessKind.Read)]
     public static SqlString loc_recognize(
         SqlDecimal lng,
         SqlDecimal lat,
-        SqlString key_b
+        SqlString google_key
         )
     {
         try
@@ -67,7 +247,7 @@ public partial class UserDefinedFunctions
             SqlString locationType = SqlString.Null;
 
             // Check if any input is NULL
-            if (lng.IsNull || lat.IsNull || key_b.IsNull)
+            if (lng.IsNull || lat.IsNull || google_key.IsNull)
             {
                 return SqlString.Null;
             }
@@ -75,12 +255,12 @@ public partial class UserDefinedFunctions
             // Convert SqlServer datatypes to C# and call function above
             string longitude = lng.ToString();
             string latitude = lat.ToString();
-            string bingKey = key_b.ToString();
+            string googleApiKey = google_key.ToString();
 
             XmlDocument apiResponse = LocRec(
                 longitude,
                 latitude,
-                bingKey
+                googleApiKey
             );
 
             // Safe XML navigation
@@ -146,4 +326,21 @@ public partial class UserDefinedFunctions
             return SqlString.Null;
         }
     }
+
+    
+    /* Extract the first type from Google Places types array */
+    private static string ExtractFirstGoogleType(string typesArray)
+    {
+        if (string.IsNullOrEmpty(typesArray)) return "";
+        
+        // Find first quoted string in the array
+        int firstQuoteIndex = typesArray.IndexOf('"');
+        if (firstQuoteIndex < 0) return "";
+        
+        int secondQuoteIndex = typesArray.IndexOf('"', firstQuoteIndex + 1);
+        if (secondQuoteIndex < 0) return "";
+        
+        return typesArray.Substring(firstQuoteIndex + 1, secondQuoteIndex - firstQuoteIndex - 1);
+    }
+    
 }

@@ -35,12 +35,12 @@ GO
 
 CREATE ASSEMBLY LocRecognize
 from 'D:\clr\LocRecognize.dll'
-with permission_set = EXTERNAL_ACCESS
+with permission_set = UNSAFE
 GO
 
 
-CREATE FUNCTION [dbo].[loc_recognize](@lng [numeric](18, 15), @lat [numeric](18, 15), @key_b [nvarchar](75))
+CREATE FUNCTION [dbo].[loc_recognize](@lng [numeric](18, 15), @lat [numeric](18, 15), @google_key [nvarchar](75))
 RETURNS [nvarchar](max) WITH EXECUTE AS CALLER
 AS 
-EXTERNAL NAME [LocRecognize].[UserDefinedFunctions].[loc_recognize]
+EXTERNAL NAME [LocRecognize].[LocRecognizeFunctions].[loc_recognize]
 GO
