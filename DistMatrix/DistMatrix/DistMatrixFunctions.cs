@@ -14,7 +14,8 @@ public partial class DistMatrixFunctions
         string dest_longitude,
         string dest_latitude,
         string mode,
-        string googleKey
+        string googleKey,
+        string departureTimeRfc3339 = null
     )
     {
         try
@@ -22,31 +23,40 @@ public partial class DistMatrixFunctions
             // URL for Google Routes API
             string url = "https://routes.googleapis.com/directions/v2:computeRoutes";
 
+            // Optional departure time JSON snippet
+            string departureJson = string.Empty;
+            if (!string.IsNullOrEmpty(departureTimeRfc3339))
+            {
+                departureJson = ",\n                \"departureTime\": \"" + departureTimeRfc3339 + "\"";
+            }
+
             // Build JSON request body for Routes API (matching working PowerShell format)
-            string requestBody = string.Format(@"{{
-                ""origin"": {{
-                    ""location"": {{
-                        ""latLng"": {{
+            string requestBody = string.Format(@"{
+                ""origin"": {
+                    ""location"": {
+                        ""latLng"": {
                             ""latitude"": {1},
                             ""longitude"": {0}
-                        }}
-                    }}
-                }},
-                ""destination"": {{
-                    ""location"": {{
-                        ""latLng"": {{
+                        }
+                    }
+                },
+                ""destination"": {
+                    ""location"": {
+                        ""latLng"": {
                             ""latitude"": {3},
                             ""longitude"": {2}
-                        }}
-                    }}
-                }},
-                ""travelMode"": ""{4}""
-            }}", 
+                        }
+                    }
+                },
+                ""travelMode"": ""{4}""{5}
+            }", 
                 origin_longitude != null ? origin_longitude.Trim() : "",
                 origin_latitude != null ? origin_latitude.Trim() : "",
                 dest_longitude != null ? dest_longitude.Trim() : "",
                 dest_latitude != null ? dest_latitude.Trim() : "",
-                ConvertTravelMode(mode != null ? mode.Trim() : "driving"));
+                ConvertTravelMode(mode != null ? mode.Trim() : "driving"),
+                departureJson
+            );
 
             // Make request to the Google Routes API REST service
             HttpWebRequest webrequest = (HttpWebRequest)WebRequest.Create(url);
@@ -96,6 +106,26 @@ public partial class DistMatrixFunctions
         }
     }
 
+    // Format DateTime to RFC3339 (e.g., 2025-09-09T14:37:00-07:00) with minute precision
+    private static string FormatDepartureTime(DateTime dt)
+    {
+        // If incoming DateTime.Kind is Unspecified, assume local
+        if (dt.Kind == DateTimeKind.Unspecified)
+        {
+            dt = DateTime.SpecifyKind(dt, DateTimeKind.Local);
+        }
+
+        // Convert to local time to preserve the intended wall-clock time for transit service
+        DateTimeOffset local = dt.Kind == DateTimeKind.Utc
+            ? dt.ToLocalTime()
+            : dt;
+
+        // Truncate seconds and below to minute
+        local = new DateTimeOffset(local.Year, local.Month, local.Day, local.Hour, local.Minute, 0, local.Offset);
+
+        return local.ToString("yyyy'-'MM'-'dd'T'HH':'mmK");
+    }
+
     /* Wrapper method to expose api functionality as SQL Server User-Defined Function (UDF) */
     [Microsoft.SqlServer.Server.SqlFunction(DataAccess = DataAccessKind.Read)]
     public static SqlString route_mi_min(
@@ -104,7 +134,8 @@ public partial class DistMatrixFunctions
         SqlDecimal d_lng,
         SqlDecimal d_lat,
         SqlString tmode,
-        SqlString google_key
+        SqlString google_key,
+        SqlDateTime start_time
         )
     {
         try
@@ -126,8 +157,11 @@ public partial class DistMatrixFunctions
             string mode = tmode.ToString();
             string googleApiKey = google_key.ToString();
 
+            // Convert start_time (SQL datetime2) to RFC3339 with minute precision and local offset
+            string departureTimeRfc3339 = start_time.IsNull ? null : FormatDepartureTime(start_time.Value);
+
             string jsonResponse = GetDistanceMatrix(
-                origin_longitude, origin_latitude, dest_longitude, dest_latitude, mode, googleApiKey
+                origin_longitude, origin_latitude, dest_longitude, dest_latitude, mode, googleApiKey, departureTimeRfc3339
             );
 
             // Parse JSON response directly

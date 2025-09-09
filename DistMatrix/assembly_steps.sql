@@ -38,7 +38,15 @@ from 'D:\clr\DistMatrix.dll'
 with permission_set = UNSAFE;
 go
 
-CREATE FUNCTION [dbo].[route_mi_min](@o_lng [numeric](18, 15), @o_lat [numeric](18, 15), @d_lng [numeric](18, 15), @d_lat [numeric](18, 15), @tmode [nvarchar](15), @google_key [nvarchar](75))
+CREATE FUNCTION [dbo].[route_mi_min](
+	@o_lng [numeric](18, 15),
+	@o_lat [numeric](18, 15),
+	@d_lng [numeric](18, 15),
+	@d_lat [numeric](18, 15),
+	@tmode [nvarchar](15),
+	@google_key [nvarchar](75),
+	@start_time [datetime2](7) NULL
+)
 RETURNS [nvarchar](max) WITH EXECUTE AS CALLER
 AS 
 EXTERNAL NAME [DistMatrix].[DistMatrixFunctions].[route_mi_min]
